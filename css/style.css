@@ -1,44 +1,29 @@
-<<<<<<< Updated upstream
-/** @format */
-
-* {
-	margin: 0;
-	padding: 0;
-	box-sizing: border-box;
-}
-=======
-.header {
-  padding: 0;
+*,
+*::after,
+*::before {
   margin: 0;
+  padding: 0;
   box-sizing: border-box;
-  background-color: black;
-  display: flex;
-  justify-content: center;
-  align-items: center;
 }
-.header .logo {
-  color: white;
-  font-size: 20px;
-  font-weight: bold;
-  font-family: Arial, Helvetica, sans-serif;
-  padding-left: 10px -10px;
+
+.box {
+  width: 20em;
+  height: 10em;
+  border: 1px solid black;
+  margin: 2rem;
+  border-width: 0.3em;
+  display: block;
 }
-.header .logo .logotype {
-  width: 95px;
-  height: 95px;
-  border-radius: 50%;
-  border-width: 1em;
+
+.sub {
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  margin: 1rem;
 }
-.header .nav {
-  display: flexbox;
-  justify-content: center;
-  align-items: center;
-}
-.header .search {
-  align-items: flex-end;
-  border-radius: 13%;
-  display: flex;
-  justify-content: flex-end;
-  align-content: center;
+.sub__box {
+  border: 1px dashed green;
+  width: 12em;
+  height: 6em;
+  font-size: 1.2rem;
+  text-align: center;
+  margin: 1rem;
 }/*# sourceMappingURL=style.css.map */
->>>>>>> Stashed changes
