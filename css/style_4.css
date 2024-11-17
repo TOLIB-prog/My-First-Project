@@ -1,0 +1,276 @@
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+h1,
+h2,
+h3 {
+	font-size: 1.2rem;
+	font-weight: bold;
+	margin: 0.4rem auto;
+	text-align: center;
+	text-decoration: underline;
+}
+
+/* ! Именование линий при определении сетки*/
+.wrapper {
+	background-color: #73dfe4;
+	border: 2px solid rgb(226, 151, 39);
+	border-radius: .2rem;
+	display: grid;
+	gap: .2rem;
+	grid-template-columns: [main-start] 1fr [content-start] 1fr [content-end] 1fr [main-end];
+	grid-template-rows: [main-start] 100px [content-start] 100px [content-end] 100px [main-end];
+	padding: 0.2rem;
+}
+
+.box1 {
+	background-color: #c784ec;
+	border: 1px solid #f0a549fe;
+	border-radius: .2rem;
+	grid-column-start: main-start;
+	grid-row-end: main-end;
+	grid-row-start: main-start;
+}
+
+.box2 {
+	background-color: #e7802c;
+	border: 1px solid #f0a549fe;
+	border-radius: .2rem;
+	grid-column-start: content-end;
+	grid-row-end: content-end;
+	grid-row-start: main-start;
+}
+
+.box3 {
+	background-color: #e44de9;
+	border: 1px solid #f0a549fe;
+	border-radius: .2rem;
+	grid-column-start: content-start;
+	grid-row-start: main-start;
+}
+
+.box4 {
+	background-color: #9248d2;
+	border: 1px solid #f0a549ef;
+	border-radius: .2rem;
+	grid-column-end: main-end;
+	grid-column-start: content-start;
+	grid-row-start: content-end;
+}
+
+/* !Нам не нужно определять границы наших областей с помощью grid-template-areas, так как наши именованные линии создали для нас область. */
+/* !Присвоение линиям нескольких имен
+Возможно, вы захотите дать строке несколько названий, например, чтобы обозначить конец боковой панели и начало основной части. Для этого добавьте названия в квадратные скобки, разделив их пробелами [sidebar-end main-start]. Затем вы сможете ссылаться на эту строку по любому из названий. */
+/* !Неявные области сетки из именованных линий */
+.wrapper-i {
+	border: 4px solid #f0a549ef;
+	display: grid;
+	grid-template-columns: [main-start] 1fr [content-start] 1fr [content-end] 1fr [main-end];
+	grid-template-rows: [main-start] 100px [content-start] 100px [content-end] 100px [main-end];
+}
+
+.block {
+	align-content: center;
+	background-color: #ecb24c;
+	border: 3px solid #e7802c;
+	border-radius: .4rem;
+	grid-area: content;
+	text-align: center;
+}
+
+/** В этом примере мы добавили дополнительный div с классом overlay. Мы назвали области, созданные с помощью grid-area свойства, затем макет, созданный в grid-template-areas. Названия областей следующие:
+
+hd
+ft
+main
+sd */
+/* *Это дает нам строки и столбцы:
+/* hd-start
+hd-end
+sd-start
+sd-end
+main-start
+main-end
+ft-start
+ft-end */
+.wrapper-a {
+	background-color: #eba13279;
+	border: 3px solid #e7802c;
+	border-radius: 4px;
+	display: grid;
+	gap: .2rem;
+	grid-template-areas:
+		"hd hd hd hd  hd		hd		hd		hd		hd"
+		"sd sd sd sd  main	main	main	main	main"
+		"ft ft ft ft  ft		ft		ft		ft		ft	";
+	grid-template-columns: repeat(9, 1fr);
+	grid-template-rows: minmax(120px, auto);
+	padding: .3rem;
+}
+
+.header-a {
+	background-color: #d6ab66b5;
+	border: 1px solid #c784ec;
+	border-radius: 4px;
+	grid-area: hd;
+	grid-column: hd-start / hd-end;
+	padding: 2rem 0;
+	text-align: center;
+}
+
+.footer-a {
+	background-color: #cf85ea;
+	border: 1px solid #c784ec;
+	border-radius: 4px;
+	grid-area: ft;
+	grid-column: ft-end / ft-start;
+	grid-row: ft-end / ft-start;
+	padding: 2.5rem 0;
+	text-align: center;
+}
+
+.content-a {
+	background-color: #d6ab66b5;
+	border: 1px solid #c784ec;
+	border-radius: 4px;
+	grid-area: main;
+	grid-column: main-start / main-end;
+	grid-row: main-start / main-end;
+	padding: 2rem 0;
+	text-align: center;
+}
+
+.sidebar-a {
+	background-color: #d6ab66b5;
+	border: 1px solid #c784ec;
+	border-radius: 4px;
+	grid-area: sd;
+	grid-column: span / sd-end;
+	grid-row-end: sd-start / sd-end;
+	padding: 8rem 0;
+	text-align: center;
+}
+
+.wrapper-a>div.overlay {
+	background-color: rgb(92 148 13 / 40%);
+	border: 4px solid rgb(92 148 13);
+	border-radius: 4px;
+	color: rgb(92 148 13);
+	font-size: 150%;
+	grid-column: 5 / main-end;
+	/*! в место цифры 5 можно использовать именованые лини сетки(main-start) */
+	grid-row: hd-start / ft-end;
+}
+
+/* *Несколько строк с одинаковым именем с помощью repeat() */
+/* !Сетка из двенадцати столбцов с использованием repeat() */
+.wrapper-b {
+	border: 2px solid #f0a549ef;
+	border-radius: 4px;
+	display: grid;
+	grid-template-columns: repeat(12, [col-start] 1fr);
+}
+
+.item1 {
+	background-color: #f2ce3c;
+	border: 2px solid #f0a549ef;
+	border-radius: 4px;
+	grid-column: col-start 1 / col-start 5;
+	margin: .5rem;
+	padding: 2rem .4rem;
+	text-align: prety;
+}
+
+.item2 {
+	background-color: #b363e8;
+	border: 2px solid #f0a549ef;
+	border-radius: 4px;
+	grid-column: col-start 9/ span 3;
+	/* !цифры в грид колумн позацинируют от начало родительского блока */
+	padding: 2rem .4rem;
+	text-align: prety;
+}
+
+/*! Определение именованных линий с помощью списка дорожек */
+.wrapper-c {
+	border: 2px solid #f0a549ef;
+	border-radius: 4px;
+	display: grid;
+	grid-template-columns: repeat(6, [col1-start] 1fr [col2-start] 3fr);
+}
+
+.item-c {
+	background-color: #c4a9e4;
+	border: 2px solid #75ce76;
+	border-radius: 4px;
+	grid-column: col1-start / col2-start 2;
+	padding: 1.4rem;
+}
+
+.item-b {
+	background-color: #ebc39a;
+	border: 2px solid #73dfe4;
+	border-radius: 4px;
+	grid-column: col1-start 2 / span 2 col1-start;
+	grid-row: 2;
+	padding: 1.2rem;
+}
+
+/* !Структура сетки с двенадцатью столбцами */
+.wrapper-d {
+	border: 2px solid #ebc39a;
+	border-radius: 4px;
+	display: grid;
+	gap: 5px;
+	grid-template-columns: repeat(12, [col-start] 1fr);
+	padding: .2rem 0;
+}
+
+.main-footer,
+.main-header {
+	background-color: #de701c63;
+	border: 2px solid rgba(232, 162, 95, 0.933);
+	border-radius: 4px;
+	grid-column: col-start / span 12;
+	padding: .3rem;
+	text-align: center;
+}
+
+.side1 {
+	background-color: #de701c63;
+	border: 2px solid #e6b264;
+	border-radius: 4px;
+	grid-column: col-start / span 2;
+	grid-row: 2;
+	padding: 3rem 0;
+	text-align: center;
+}
+
+.content {
+	background-color: #de701c63;
+	border: 2px solid #efad62;
+	border-radius: 4px;
+	grid-column: col-start 3 / span 8;
+	grid-row: 2;
+	padding: 3rem 0;
+	text-align: center;
+}
+
+.side2 {
+	background-color: #de701c63;
+	border: 2px solid #e6b264;
+	border-radius: 4px;
+	grid-column: col-start 11 / span 2;
+	grid-row: 2;
+	padding: 3rem 0;
+	text-align: center;
+}
+
+.main-footer {
+	background-color: #514e4e43;
+	padding: 2.5rem 0;
+	text-align: center;
+}

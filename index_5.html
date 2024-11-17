@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport"
+				content="width=device-width, initial-scale=1.0">
+		<title>Document</title>
+		<link rel="stylesheet"
+				href="css/style_5.css">
+	</head>
+
+	<body>
+		<h1>Автоматическое размещение в макете сетки</h1>
+		<h2>Правила автоматического размещения по умолчанию</h2>
+		<p> !Изменение размера строк в неявной сетке</p>
+		<!-- !По умолчанию автоматически создаваемые строки в неявной сетке имеют автоматический размер. Это означает, что они будут содержать добавленный в них контент без переполнения.-->
+		<!--!Однако вы можете управлять размером этих строк с помощью свойства grid-auto-rows. Например, чтобы все созданные строки имели высоту 100 пикселей, вы можете использовать: -->
+		<div class="wrapper">
+			<div>One</div>
+			<div>Two</div>
+			<div>Three</div>
+			<div>Four</div>
+			<div>five</div>
+		</div>
+		<h2>Изменение размера строк с помощью minmax ()</h2>
+		<div class="wrapper-a">
+			<div>One</div>
+			<div>Two</div>
+			<div>Three</div>
+			<div>Four <br>This cell <br> Has extra <br> content. <br>Max is auto <br>so the row expads.</div>
+			<div>Five</div>
+		</div>
+		<h2>Изменение размера строк с помощью списка дорожек</h2>
+		<div class="wrapper-b">
+			<div>One</div>
+			<div>Two</div>
+			<div>Three</div>
+			<div>Four</div>
+			<div>Five</div>
+			<div>Six</div>
+			<div>Seven</div>
+			<div>Eight</div>
+			<div>Nine</div>
+		</div>
+		<h2>Автоматическое размещение по столбцам</h2>
+		<div class="wrapper-c">
+			<div>One</div>
+			<div>Two</div>
+			<div>Three</div>
+			<div>Four</div>
+			<div>Five</div>
+			<div>Six</div>
+			<div>Seven</div>
+			<div>Eight</div>
+		</div>
+		<h2>Порядок автоматического размещения элементов</h2>
+		<div class="wrapper-d">
+			<div>One</div>
+			<div>Two</div>
+			<div>Three</div>
+			<div>Four</div>
+			<div>Five</div>
+			<div>Six</div>
+			<div>Seven</div>
+			<div>Eight</div>
+			<div>Nine</div>
+			<div>Tent</div>
+			<div>Eleven</div>
+			<div>Tvelve</div>
+		</div>
+		<h2>Работа с элементами, охватывающими дорожки</h2>
+		<div class="wrapper-e">
+			<div>One</div>
+			<div>Two</div>
+			<div>Three</div>
+			<div>Four</div>
+			<div>Five</div>
+			<div>Six</div>
+			<div>Seven</div>
+			<div>Eight</div>
+			<div>Nine</div>
+			<div>Tent</div>
+			<div>Eleven</div>
+			<div>Tvelve</div>
+		</div>
+		<h2>Заполнение пробелов</h2>
+		<div class="wrapper-f">
+			<div>One</div>
+			<div>Two</div>
+			<div>Three</div>
+			<div>Four</div>
+			<div>Five</div>
+			<div>Six</div>
+			<div>Seven</div>
+			<div>Eight</div>
+			<div>Nine</div>
+			<div>Tent</div>
+			<div>Eleven</div>
+			<div>Tvelve</div>
+		</div>
+		<h2>Walepaper</h2>
+		<ul class="wrapper-j">
+			<li><img src=""
+					  alt="">1</li>
+			<li><img src=""
+					  alt="">2</li>
+			<li><img src=""
+					  alt="">3</li>
+			<li><img src=""
+					  alt="">4</li>
+			<li><img src=""
+					  alt="">5</li>
+			<li><img src=""
+					  alt="">6</li>
+			<li><img src=""
+					  alt="">7</li>
+			<li><img src=""
+					  alt="">8</li>
+		</ul>
+		<script src="/app/js/main.js"></script>
+	</body>
+
+</html>

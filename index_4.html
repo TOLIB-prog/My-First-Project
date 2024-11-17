@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Document</title>
+		<link rel="stylesheet" href="css/style_4.css">
+	</head>
+
+	<body>
+		<h1>Верстка с использованием именованных линий сетки</h1>
+		<h2>Именование линий при определении сетки</h2>
+		<div class="wrapper">
+			<div class="box1">One</div>
+			<div class="box2">Two</div>
+			<div class="box3">Three</div>
+			<div class="box4">Four</div>
+		</div>
+		<h2>Неявные области сетки из именованных линий</h2>
+		<div class="wrapper-i">
+			<div class="block">I am at the corner of street.</div>
+		</div>
+		<h2>Неявные линии сетки из именованных областей</h2>
+		<div class="wrapper-a">
+			<div class="header-a">Header</div>
+			<div class="sidebar-a">sidebar</div>
+			<div class="content-a">Content</div>
+			<div class="footer-a">Footer</div>
+			<div class="overlay">Overlay</div>
+		</div>
+		<h2>Несколько строк с одинаковым именем с помощью repeat()</h2>
+		<h3>Сетка из двенадцати столбцов с использованием repeat()</h3>
+		<div class="wrapper-b">
+			<div class="item1">I am placed from col-start line 1 to col-start 5</div>
+			<div class="item2">I am placed from col-start line 7 spanning 3 lines</div>
+		</div>
+		<h2>Определение именованных линий с помощью списка дорожек</h2>
+		<div class="wrapper-c">
+			<div class="item-c"> I am placed from col1-start line 1 to col2-start line 2 </div>
+			<div class="item-b"> I am placed from col1-start line 2 spanning 2 lines named col1-start </div>
+		</div>
+		<h2>Структура сетки с двенадцатью столбцами</h2>
+		<div class="wrapper-d">
+			<header class="main-header">I am header</header>
+			<aside class="side1">I am sidebar 1</aside>
+			<article class="content">I am the main article</article>
+			<aside class="side2">I am sidebar 2</aside>
+			<footer class="main-footer">I am the footer</footer>
+		</div>
+	</body>
+
+</html>
